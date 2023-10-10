@@ -20,7 +20,6 @@ export SPACESHIP_PROMPT_ORDER=(
   kubectl
   venv
   node          # Node.js section
-  dotnet        # .NET section
   exec_time     # Execution time
   line_sep      # Line break
   vi_mode       # Vi-mode indicator
@@ -42,7 +41,7 @@ plugins=(
   history-substring-search
   gitfast
   mvn
-  nvm
+  volta
   sdk
   docker
   docker-compose
@@ -101,7 +100,3 @@ fi
 
 # Do not end this script with `exit 0` or the shell will close after startup!
 # Do not end this script with a failed command or the shell will fail to start!
-
-#export NVM_DIR="$HOME/.config/nvm"
-#[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-#[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
