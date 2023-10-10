@@ -22,6 +22,7 @@ export LC_MONETARY=it_IT
 export LESS="--no-init --quit-if-one-screen --RAW-CONTROL-CHARS"
 #export PYTHONSTARTUP="$HOME/.pythonstartup"
 export TZ=Europe/Zurich
+export VOLTA_HOME="$HOME/.volta"
 export VSCODE_HOME="/Applications/Visual Studio Code.app/Contents/Resources/app"
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH="$HOME/.oh-my-zsh"
@@ -47,6 +48,7 @@ export ZSH_CUSTOM="$SEGURI_HOME/oh-my-zsh/custom"
 #
 
 PATH="$ANDROID_HOME/platform-tools:$PATH"
+PATH="$VOLTA_HOME/bin:$PATH"
 PATH="$VSCODE_HOME/bin:$PATH"
 PATH="$HOME/.cargo/bin:$PATH"
 PATH="$HOME/go/bin:$PATH"
