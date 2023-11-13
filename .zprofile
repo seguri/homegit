@@ -14,6 +14,7 @@ export CALIBRE_HOME="$HOME/Calibre"
 export EDITOR=vim
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --follow --exclude .git --exclude .DS_Store"
 export FZF_DEFAULT_OPTS='--multi --exit-0 --select-1 --color=light --bind ctrl-b:preview-page-up,ctrl-f:preview-page-down,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down --query "!node_modules/ !target/ !class$ !pyc$ "'
+export GPG_TTY=$(tty)
 export JOHNNY_DECIMAL_HOME="$HOME/OneDrive/Johnny.Decimal"
 export LC_NUMERIC=it_IT
 export LC_TIME=it_IT
