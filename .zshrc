@@ -46,6 +46,7 @@ plugins=(
   docker
   docker-compose
   vault
+  heroku
   # custom
   git-open
   zsh-autosuggestions
@@ -75,7 +76,7 @@ fi
 # Java
 if [[ -x /usr/libexec/java_home ]]; then
     #export JAVA_HOME="$(/usr/libexec/java_home -v '11.0.17')"
-    export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/corretto-17.0.8.1/Contents/Home"
+    export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/corretto-17.0.9/Contents/Home"
 fi
 
 # nodejs, after nvm
@@ -97,6 +98,9 @@ fi
 if [[ -d ~/Library/CloudStorage/OneDrive-Personal && ! -L ~/OneDrive ]]; then
   ln -sv ~/Library/CloudStorage/OneDrive-Personal ~/OneDrive
 fi
+
+#TODO
+#source $HOME/.config/op/plugins.sh
 
 # Do not end this script with `exit 0` or the shell will close after startup!
 # Do not end this script with a failed command or the shell will fail to start!
