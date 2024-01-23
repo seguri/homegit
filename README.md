@@ -14,6 +14,10 @@ alias config='GIT_DIR=$HOME/.homegit/ GIT_WORK_TREE=$HOME git'
 ## git-crypt
 
 ```sh
+$ brew install git-crypt
+$ cd $HOME/.homegit
+$ git-crypt init
+Generating key...
 $ GIT_DIR=$HOME/.homegit/ GIT_WORK_TREE=$HOME git-crypt add-gpg-user 0xA0A378A5
 [main cce002a] Add 1 git-crypt collaborator
  2 files changed, 4 insertions(+)
