@@ -40,7 +40,7 @@ plugins=(
   zoxide
   history-substring-search
   gitfast
-  mvn
+  #mvn
   volta
   sdk
   docker
@@ -76,7 +76,7 @@ fi
 # Java
 if [[ -x /usr/libexec/java_home ]]; then
     #export JAVA_HOME="$(/usr/libexec/java_home -v '11.0.17')"
-    export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/corretto-17.0.9/Contents/Home"
+    export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/corretto-17.0.10/Contents/Home"
 fi
 
 # nodejs, after nvm
@@ -104,3 +104,4 @@ fi
 
 # Do not end this script with `exit 0` or the shell will close after startup!
 # Do not end this script with a failed command or the shell will fail to start!
+
