@@ -1,0 +1,48 @@
+# shellcheck shell=bash
+
+# Environment
+
+alias ..='cd ..'
+alias cdc='cd ~/Documents'
+alias cdd='cd ~/Downloads'
+alias cde='cd ~/Desktop'
+alias esl='exec $SHELL -l'
+alias l='ls -lA'
+
+# Git
+
+git() {
+    if [[ $PWD = "$HOME" ]]; then
+        GIT_DIR=$HOME/.homegit/ GIT_WORK_TREE=$HOME command git "$@"
+    else
+        command git "$@"
+    fi
+}
+
+gbD () {
+    if [[ $1 ]]; then
+        git branch --delete --force "$1"
+    else
+        #git branch --sort=-committerdate --no-color | egrep -v 'master$' | egrep -v '^\* ' | fzf +m | sed 's/* //' | xargs -r git branch --delete
+        #git branch --merged | fzf +m | sed "s/.* //" | xargs -r git branch --delete
+        git branch --sort=-committerdate | grep -E -v '^\* ' | fzf -m | xargs -r command git branch --delete --force
+    fi
+}
+
+alias homegit='GIT_DIR=$HOME/.homegit/ GIT_WORK_TREE=$HOME git'
+alias g=git
+alias gbc='git checkout -b'
+alias gbm='git branch --move'
+alias gCm='git commit --message'
+alias gcm='git checkout $(git-branch-master)'
+alias giA='git add --all'
+alias gpb='git push --set-upstream origin "$(git-branch-current 2> /dev/null)"'
+alias gr='git rebase'
+alias gra='git rebase --abort'
+alias grc='git rebase --continue'
+alias gri='git rebase --interactive'
+alias gwd='git diff'
+alias gwdc='git diff --cached'
+alias gwR='git reset --hard'
+alias gwr='git reset --soft'
+alias gws='git status --short --ignore-submodules=all'

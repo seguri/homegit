@@ -56,6 +56,8 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 
+source $HOME/.zsh_aliases
+
 # User configuration
 
 setopt HIST_IGNORE_ALL_DUPS
@@ -74,11 +76,11 @@ if [[ -f ~/.sdkman/bin/sdkman-init.sh ]]; then
 fi
 
 # Java
-if [[ -x /usr/libexec/java_home ]]; then
-    #export JAVA_HOME="$(/usr/libexec/java_home -v '11.0.17')"
-    #export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/corretto-17.0.10/Contents/Home"
-    export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home"
-fi
+#if [[ -x /usr/libexec/java_home ]]; then
+#    export JAVA_HOME="$(/usr/libexec/java_home -v '11.0.17')"
+#fi
+#export JAVA_HOME="$HOME/Library/Java/JavaVirtualMachines/corretto-17.0.10/Contents/Home"
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home"
 
 # nodejs, after nvm
 if (( $+commands[npm] )); then
@@ -99,18 +101,6 @@ fi
 if [[ -d ~/Library/CloudStorage/OneDrive-Personal && ! -L ~/OneDrive ]]; then
   ln -sv ~/Library/CloudStorage/OneDrive-Personal ~/OneDrive
 fi
-
-# aliases
-alias ..='cd ..'
-alias esl='exec $SHELL -l'
-alias homegit='GIT_DIR=$HOME/.homegit/ GIT_WORK_TREE=$HOME git'
-alias hga='homegit add'
-alias hgCm='homegit commit --message'
-alias hgd='homegit diff'
-alias hgdc='homegit diff --cached'
-alias hgp='homegit push'
-alias hgss='homegit status --short'
-alias l='ls -lA'
 
 #TODO
 #source $HOME/.config/op/plugins.sh
