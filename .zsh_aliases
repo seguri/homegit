@@ -12,24 +12,6 @@ alias l='ls -lA'
 
 # Git
 
-git() {
-    if [[ $PWD = "$HOME" ]]; then
-        GIT_DIR=$HOME/.homegit/ GIT_WORK_TREE=$HOME command git "$@"
-    else
-        command git "$@"
-    fi
-}
-
-gbD () {
-    if [[ $1 ]]; then
-        git branch --delete --force "$1"
-    else
-        #git branch --sort=-committerdate --no-color | egrep -v 'master$' | egrep -v '^\* ' | fzf +m | sed 's/* //' | xargs -r git branch --delete
-        #git branch --merged | fzf +m | sed "s/.* //" | xargs -r git branch --delete
-        git branch --sort=-committerdate | grep -E -v '^\* ' | fzf -m | xargs -r command git branch --delete --force
-    fi
-}
-
 alias homegit='GIT_DIR=$HOME/.homegit/ GIT_WORK_TREE=$HOME git'
 alias g=git
 alias gbc='git checkout -b'
@@ -48,3 +30,51 @@ alias gwdc='git diff --cached'
 alias gwR='git reset --hard'
 alias gwr='git reset --soft'
 alias gws='git status --short --ignore-submodules=all'
+alias t=tig
+
+git() {
+    if [[ $PWD = "$HOME" ]]; then
+        GIT_DIR=$HOME/.homegit/ GIT_WORK_TREE=$HOME command git "$@"
+    else
+        command git "$@"
+    fi
+}
+
+gbD () {
+    if [[ $1 ]]; then
+        git branch --delete --force "$1"
+    else
+        #git branch --sort=-committerdate --no-color | egrep -v 'master$' | egrep -v '^\* ' | fzf +m | sed 's/* //' | xargs -r git branch --delete
+        #git branch --merged | fzf +m | sed "s/.* //" | xargs -r git branch --delete
+        git branch --sort=-committerdate | grep -E -v '^\* ' | fzf -m | xargs -r command git branch --delete --force
+    fi
+}
+
+gco () {
+    if [[ $1 == -a || $1 == --all ]]; then
+        # There's no need to delete "remotes/" and keep the following "origin/": given a branch name, git will fetch it if not locally available.
+        git branch --all --no-color | sed 's/.* //' | sed 's#remotes/##' | sed 's#origin/##' | sort | uniq | fzf -0 -1 | xargs -r git checkout
+    elif [[ $@ ]]; then
+        git checkout "$@"
+    else
+        # Alternative version based on https://stackoverflow.com/questions/5188320/how-can-i-get-a-list-of-git-branches-ordered-by-most-recent-commit
+        git branch --sort=-committerdate --no-color | fzf -0 -1 | xargs -r git checkout
+    fi
+}
+
+ga () {
+    for f in "$@"; do
+        git add "$f"
+        [[ -f $f || -d $f ]] && git commit --message "Add $(basename "$f")" -- "$f"
+    done
+}
+
+gu () {
+    for f in "$@"; do
+        [[ -f $f || -d $f ]] && git commit --message "Update $(basename "$f")" -- "$f"
+    done
+}
+
+# Python
+
+alias svba='source venv/bin/activate'
