@@ -28,6 +28,12 @@ export VSCODE_HOME="/Applications/Visual Studio Code.app/Contents/Resources/app"
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH="$HOME/.oh-my-zsh"
 
+if [[ $(uname -m) = x86_64 ]]; then
+    export BREW_HOME=/usr/local
+else
+    export BREW_HOME=/opt/homebrew
+fi
+
 #
 # LEVEL 1
 #
