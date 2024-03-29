@@ -75,6 +75,18 @@ gu () {
     done
 }
 
+# Heroku
+
+alias hrpm='heroku run python manage.py'
+
 # Python
 
 alias svba='source venv/bin/activate'
+
+# Java
+
+alias mvncv='mvn clean spotless:apply verify'
+alias mvncvst='mvn clean spotless:apply verify -DskipTests'
+alias mvnep='mvn help:effective-pom'
+alias spotless='mvn --quiet spotless:apply'
+alias sp=spotless
