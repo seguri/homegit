@@ -9,6 +9,12 @@ alias cde='cd ~/Desktop'
 alias cdo='cd ~/OneDrive'
 alias esl='exec $SHELL -l'
 alias l='ls -lA'
+alias microsoft-auto-update='open /Library/Application\ Support/Microsoft/MAU2.0/Microsoft\ AutoUpdate.app'
+alias mau=microsoft-auto-update
+
+jd() {
+    cd "$(johnny-decimal.sh $1)"
+}
 
 # Git
 
@@ -25,6 +31,7 @@ alias gr='git rebase'
 alias gra='git rebase --abort'
 alias grc='git rebase --continue'
 alias gri='git rebase --interactive'
+alias gsiu='git submodules update --init'
 alias gwd='git diff'
 alias gwdc='git diff --cached'
 alias gwR='git reset --hard'
@@ -40,7 +47,7 @@ git() {
     fi
 }
 
-gbD () {
+gbD() {
     if [[ $1 ]]; then
         git branch --delete --force "$1"
     else
@@ -50,7 +57,7 @@ gbD () {
     fi
 }
 
-gco () {
+gco() {
     if [[ $1 == -a || $1 == --all ]]; then
         # There's no need to delete "remotes/" and keep the following "origin/": given a branch name, git will fetch it if not locally available.
         git branch --all --no-color | sed 's/.* //' | sed 's#remotes/##' | sed 's#origin/##' | sort | uniq | fzf -0 -1 | xargs -r git checkout
@@ -62,14 +69,14 @@ gco () {
     fi
 }
 
-ga () {
+ga() {
     for f in "$@"; do
         git add "$f"
         [[ -f $f || -d $f ]] && git commit --message "Add $(basename "$f")" -- "$f"
     done
 }
 
-gu () {
+gu() {
     for f in "$@"; do
         [[ -f $f || -d $f ]] && git commit --message "Update $(basename "$f")" -- "$f"
     done
@@ -85,8 +92,10 @@ alias svba='source venv/bin/activate'
 
 # Java
 
+alias mvncc='mvn clean spotless:apply test-compile'
 alias mvncv='mvn clean spotless:apply verify'
 alias mvncvst='mvn clean spotless:apply verify -DskipTests'
 alias mvnep='mvn help:effective-pom'
+alias mvnx='mvn clean spotless:apply spring-boot:run'
 alias spotless='mvn --quiet spotless:apply'
 alias sp=spotless
