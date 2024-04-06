@@ -3,4 +3,9 @@
 set -euo pipefail
 
 mkdir -p "$HOME/.zsh"
-git clone --depth=1 https://github.com/spaceship-prompt/spaceship-prompt.git "$HOME/.zsh/spaceship"
+cd "$HOME/.zsh"
+
+if [[ ! -d spaceship ]]; then
+    git clone --depth=1 https://github.com/spaceship-prompt/spaceship-prompt.git spaceship
+fi
+

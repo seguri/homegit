@@ -68,6 +68,7 @@ fi
 
 # spaceship prompt
 source $HOME/.zsh/spaceship/spaceship.zsh
+spaceship remove gcloud
 
 #TODO
 #source $HOME/.config/op/plugins.sh
