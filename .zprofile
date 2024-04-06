@@ -15,6 +15,7 @@ export EDITOR=vim
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --follow --exclude .git --exclude .DS_Store"
 export FZF_DEFAULT_OPTS='--multi --exit-0 --select-1 --color=light --bind ctrl-b:preview-page-up,ctrl-f:preview-page-down,ctrl-u:preview-half-page-up,ctrl-d:preview-half-page-down --query "!node_modules/ !target/ !class$ !pyc$ "'
 export GPG_TTY=$(tty)
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/amazon-corretto-21.jdk/Contents/Home"
 export JOHNNY_DECIMAL_HOME="$HOME/OneDrive/Johnny.Decimal"
 export LC_NUMERIC=it_IT
 export LC_TIME=it_IT
@@ -54,6 +55,8 @@ export ZSH_CUSTOM="$SEGURI_HOME/oh-my-zsh/custom"
 # PATH
 #
 
+PATH="/opt/apache-maven-3.9.6/bin:$PATH"
+PATH="/opt/google-cloud-sdk/bin:$PATH"
 PATH="$ANDROID_HOME/platform-tools:$PATH"
 PATH="$VOLTA_HOME/bin:$PATH"
 PATH="$VSCODE_HOME/bin:$PATH"
