@@ -49,6 +49,7 @@ source $ZSH/oh-my-zsh.sh
 source $HOME/.zsh_aliases
 
 source "$(brew --prefix fzf 2>/dev/null)/shell/key-bindings.zsh"
+source "$(brew --prefix fzf 2>/dev/null)/shell/completion.zsh"
 
 # User configuration
 
