@@ -10,6 +10,7 @@
 export ANDROID_HOME="$HOME/Library/Android/sdk"
 export BAT_THEME="GitHub"
 export BIZ_HOME="$HOME/biz"
+export BREW_HOME="$(brew --prefix)"
 export CALIBRE_HOME="$HOME/Calibre"
 export EDITOR=vim
 export FZF_DEFAULT_COMMAND="fd --type f --strip-cwd-prefix --follow --exclude .git --exclude .DS_Store"
@@ -28,12 +29,6 @@ export VOLTA_HOME="$HOME/.volta"
 export VSCODE_HOME="/Applications/Visual Studio Code.app/Contents/Resources/app"
 export XDG_CONFIG_HOME="$HOME/.config"
 export ZSH="$HOME/.oh-my-zsh"
-
-if [[ $(uname -m) = x86_64 ]]; then
-    export BREW_HOME=/usr/local
-else
-    export BREW_HOME=/opt/homebrew
-fi
 
 #
 # LEVEL 1
