@@ -1,6 +1,7 @@
 # shellcheck shell=bash
 
 # Environment
+# History management is provided by $(brew --prefix fz)/shell/key-bindings.zsh
 
 alias ..='cd ..'
 alias cdc='cd ~/Documents'
