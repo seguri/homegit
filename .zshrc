@@ -79,6 +79,15 @@ fi
 source $HOME/.zsh/spaceship/spaceship.zsh
 spaceship remove gcloud
 
+# dark theme support
+if (( $ALACRITTY )); then
+    if [[ $(defaults read -g AppleInterfaceStyle 2>/dev/null) == Dark ]]; then
+        cp $HOME/.config/alacritty/Brewer.dark.toml $HOME/.config/alacritty/active_theme.toml
+    else
+        cp $HOME/.config/alacritty/Brewer.light.toml $HOME/.config/alacritty/active_theme.toml
+    fi
+fi
+
 #TODO
 #source $HOME/.config/op/plugins.sh
 

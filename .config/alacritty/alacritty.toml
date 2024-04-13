@@ -2,6 +2,9 @@ import = [
     "~/.config/alacritty/active_theme.toml"
 ]
 
+[env]
+ALACRITTY = "1"
+
 [font.normal]
 family = "Fira Code"
 
