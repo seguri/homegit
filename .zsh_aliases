@@ -12,6 +12,11 @@ alias esl='exec $SHELL -l'
 alias l='ls -lA'
 alias microsoft-auto-update='open /Library/Application\ Support/Microsoft/MAU2.0/Microsoft\ AutoUpdate.app'
 alias mau=microsoft-auto-update
+alias vlc='open -a VLC'
+#alias yt-dlp-720="yt-dlp -f 'best[height<=720]'"
+alias yt-dlp-720="yt-dlp -S 'height:720'"
+alias yt-dlp-best-video-all-audio="yt-dlp -f 'bv*+mergeall[vcodec=none]' --audio-multistreams"
+alias yt-dlp-smallest-res="yt-dlp -S '+res'"
 
 jd() {
     cd "$(johnny-decimal.sh $1)"
