@@ -44,7 +44,9 @@ plugins=(
   zsh-fuzzy-wd
 )
 
-source $ZSH/oh-my-zsh.sh
+if [[ -f $ZSH/oh-my-zsh.sh ]]; then
+    source $ZSH/oh-my-zsh.sh
+fi
 
 source $HOME/.zsh_aliases
 
