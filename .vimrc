@@ -88,12 +88,6 @@ function TrimWhiteSpace()
 endfunction
 
 
-" Update timestamp of Markdown files containing a 'modified' header
-" http://www.vimregex.com/
-"autocmd BufWritePre *.md :1,10s/modified: '\zs\d\{4}-\d\{2}-\d\{2}T[^']\+\ze'/\=strftime('%FT%T%z')/g
-"autocmd BufWritePre *.md exe "normal! \<C-o>"
-
-
 " FileType specific settings
 " You can invoke equalprg (reindent) with gg=G
 autocmd FileType go setlocal equalprg=gofmt
