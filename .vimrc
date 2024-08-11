@@ -75,14 +75,6 @@ noremap <Right> <nop>
 cmap w!! w !sudo /usr/bin/tee > /dev/null %
 
 
-" Override unreadable highligts
-" http://www.calmar.ws/vim/256-xterm-24bit-rgb-color-chart.html
-"highlight Todo term=standout ctermfg=0 ctermbg=11 guifg=Blue guibg=Yellow
-"highlight MatchParen ctermfg=black ctermbg=white
-"highlight YcmErrorSection ctermfg=13 ctermbg=242
-"highlight YcmWarningSection ctermfg=black ctermbg=12
-
-
 set splitbelow
 set splitright
 let g:netrw_altv = 1 " when navigating a folder,
