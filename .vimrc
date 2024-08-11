@@ -26,12 +26,6 @@ set history=1000
 filetype plugin on
 syntax on
 
-
-let g:vimwiki_list = [
-  \ {'path': '$VIMWIKI_HOME/personal', 'template_ext': '.wiki', 'syntax': 'markdown'},
-  \ {'path': '$VIMWIKI_HOME/doodle', 'template_ext': '.wiki', 'syntax': 'markdown'}]
-let g:vimwiki_ext2syntax = {'.wiki': 'markdown'}
-
 " nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 "nnoremap <Leader>x :.!perl -pe "/- \[ \]/ ? s/- \[ \]/- \[X\]/ : s/- \[X\]/- \[ \]/"<CR>
