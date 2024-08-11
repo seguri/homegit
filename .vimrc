@@ -26,6 +26,7 @@ set history=1000
 filetype plugin on
 syntax on
 
+
 " nnoremap <SPACE> <Nop>
 let mapleader = "\<Space>"
 "nnoremap <Leader>x :.!perl -pe "/- \[ \]/ ? s/- \[ \]/- \[X\]/ : s/- \[X\]/- \[ \]/"<CR>
@@ -34,16 +35,6 @@ nnoremap <Leader>d i<C-R>=strftime("%Y-%m-%d")<CR>
 " Make Vim show ALL white spaces as a character
 " https://stackoverflow.com/a/1675752/1521064
 nnoremap <Leader>l :set list!<CR>
-
-" German
-"nnoremap <Leader><Leader> /",$<CR>i<Space>\|<Space>
-" Temporary C-Space to reproduce <Leader><Space> in Insert mode
-"inoremap <C-@> <ESC>0j/",$<CR>i<Space>\|<Space>
-" https://unix.stackexchange.com/questions/563469/conflict-ctrl-i-with-tab-in-normal-mode
-"inoremap <C-i> <i></i><ESC>3hi
-"inoremap ,, <ESC>f>a,<Space>
-"inoremap <C-h> <ESC>/hat<Space><CR>dwea<Space>haben
-"nnoremap <C-h> /hat<Space><CR>dwea<Space>haben<ESC>b
 
 
 " So that you can quit with `;q`
@@ -55,6 +46,7 @@ vnoremap ; :
 " http://vim.wikia.com/wiki/Avoid_the_escape_key
 " Also, stay where you are instead of going back 1 position
 inoremap jj <ESC>l
+
 
 " Center screen on next/previous selection.
 nnoremap n nzz
@@ -136,6 +128,7 @@ if has('clipboard')
         set clipboard=unnamed
     endif
 endif
+
 
 " My macros. Convert a macro to text with `"ap` for a macro registered on `a`. Insert `<ESC>` in insert mode with `<C-v><Esc>`.
 let @4 = '0g_1000a d40|j' " Insert spaces in current line up to column 40; move to the line below so that you can execute this on a block of text
