@@ -81,13 +81,6 @@ let g:netrw_altv = 1 " when navigating a folder,
                      " hitting <v> opens a window at right side (default is left side)
 
 
-" Easier split navigation
-"nnoremap <C-J> <C-W><C-J>
-"nnoremap <C-K> <C-W><C-K>
-"nnoremap <C-L> <C-W><C-L>
-"nnoremap <C-H> <C-W><C-H>
-
-
 " Removes trailing spaces
 function TrimWhiteSpace()
   %s/\s*$//
